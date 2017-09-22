@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" type="text/css" href="css/lightbox.css">
   <link rel="stylesheet" type="text/css" href="css/screen.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -12,7 +13,32 @@
   <script type="text/javascript" src="js/lightbox.js"></script>
 </head>
 <body>
+<nav class="navbar navbar-inverse bg-inverse">
+  <a class="navbar-brand" href="index.html">Home</a>
+  <a class="navbar-brand" href="secondPage.html">About</a>
+</nav>
 	<h2>Picture Example</h2>
+	<div class="w3-content w3-section" style="max-width:500px">
+  <img class="mySlides w3-animate-fading" src="images/laser.png" style="width:100%">
+  <img class="mySlides w3-animate-fading" src="images/pic.png" style="width:100%">
+</div>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 9000);    
+}
+</script>
+
 	<div class="thumbnails group">
 		<a href="images/laser.png" data-lightbox="gallery" data-title="This is an example picture"><img src="images/laser.png" alt="Kingdom Hearts" width="200" height="100"></a>
 		<a href="images/pic.png" data-lightbox="gallery"><img src="images/pic.png" alt="Kingdom Hearts" width="200" height="100"></a>
@@ -23,6 +49,5 @@
 		<a href="images/laser.png" data-lightbox="gallery" data-title="This is an example picture"><img src="images/laser.png" alt="Kingdom Hearts" width="200" height="100"></a>
 		<a href="images/pic.png" data-lightbox="gallery"><img src="images/pic.png" alt="Kingdom Hearts" width="200" height="100"></a>
 	</div>
-	<a href="secondPage.html">Click Here!</a>
 </body>
 </html>
